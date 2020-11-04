@@ -21,6 +21,7 @@ function Navbar() {
     setClick(!click);
   };
 
+  const mobileCloseMenu = () => setClick(false);
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -39,7 +40,7 @@ function Navbar() {
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav>
           <NavContainer>
-            <NavLogo to="/" onClick={onToggle} click={click}>
+            <NavLogo to="/" onClick={mobileCloseMenu}>
               <NavIcon />
               Ultra
             </NavLogo>
@@ -51,10 +52,10 @@ function Navbar() {
                 <NavLink to="/">Home</NavLink>
               </NavItems>
               <NavItems>
-                <NavLink to="/products">Products</NavLink>
+                <NavLink to="/services">Services</NavLink>
               </NavItems>
               <NavItems>
-                <NavLink to="/services">Services</NavLink>
+                <NavLink to="/products">Products</NavLink>
               </NavItems>
               <NavItemsBtn>
                 {button ? (

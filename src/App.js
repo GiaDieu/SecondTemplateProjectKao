@@ -6,21 +6,21 @@ import Services from "./components/Services";
 import Products from "./components/Products";
 import SignUp from "./components/SignUp";
 import GlobalStyle from "./GlobalStyle";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
-      <Router>
-        <GlobalStyle />
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/services" exact component={Services} />
-          <Route path="/products" exact component={Products} />
-          <Route path="/sign-up" exact component={SignUp} />
-        </Switch>
-        <Footer />
-      </Router>
+      <GlobalStyle />
+      <ScrollToTop />
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/services" component={Services} />
+        <Route path="/products" component={Products} />
+        <Route path="/sign-up" component={SignUp} />
+      </Switch>
+      <Footer />
     </Router>
   );
 };
